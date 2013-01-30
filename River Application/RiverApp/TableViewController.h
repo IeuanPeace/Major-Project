@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "RiverList.h"
+#import "MyRiverList.h"
 
 @interface TableViewController : UITableViewController{
     
    NSMutableArray *rivers;
 }
 
-
+@property (nonatomic, strong) MyRiverList * ops;
 @property (nonatomic, retain) NSMutableArray *rivers;
 @property (weak, nonatomic) IBOutlet UILabel *riverName;
 @property (weak, nonatomic) IBOutlet UILabel *sectionName;

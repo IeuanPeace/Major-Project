@@ -15,13 +15,14 @@
 @implementation ViewController
 
 
-@synthesize riverName;
-@synthesize sectionName;
-@synthesize grade;
-@synthesize decription;
+@synthesize River;
+@synthesize Section;
+@synthesize Grade;
+@synthesize Description;
 @synthesize rivers;
+@synthesize myRiverListDetail;
 
-- (void)didReceiveMemoryWarning
+/*- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
@@ -31,26 +32,43 @@
 
 - (void)viewDidLoad
 {
-  /*  MyRiverList * myrivers =[[MyRiverList alloc] init];
+    MyRiverList * myrivers =[[MyRiverList alloc] init];
     self.rivers = [myrivers getMyRivers];
-    [self.riverName setText:((RiverList *) [self.rivers objectAtIndex:0]).River];
-    [self.sectionName setText:((RiverList *) [self.rivers objectAtIndex:0]).Section];
-    [self.grade setText:((RiverList *) [self.rivers objectAtIndex:0]).Grade];
-    [self.decription setText:((RiverList *) [self.rivers objectAtIndex:0]).Description];
+    [self.River setText:((RiverList *) [self.rivers objectAtIndex:0]).River];
+    [self.Section setText:((RiverList *) [self.rivers objectAtIndex:0]).Section];
+    [self.Grade setText:((RiverList *) [self.rivers objectAtIndex:0]).Grade];
+    [self.Description setText:((RiverList *) [self.rivers objectAtIndex:0]).Description];
     [super viewDidLoad];
-   */
-    [super viewDidLoad];
+
    
-   
-    
+ 
+}*/
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    myRiverListDetail = (RiverList *)[self myRiverListDetail];
+    self.River.text =  myRiverListDetail.River;
+    self.Section.text = myRiverListDetail.Section;
+    self.Grade.text = myRiverListDetail.Grade;
+    self.Description.text = myRiverListDetail.Description;
+}
+
 
 - (void)viewDidUnload
 {
     
-    [self setRiverName:nil];
-    [self setSectionName:nil];
-    [self setDecription:nil];
+    [self setRiver:nil];
+    [self setSection:nil];
+    [self setDescription:nil];
     [self setGrade:nil];
     [super viewDidUnload];
 }
@@ -66,10 +84,10 @@
         
     }else{
         RiverList *aRiver = (RiverList *) [self.rivers objectAtIndex: currentIndex];
-        [self.riverName setText:aRiver.River];
-        [self.sectionName setText:aRiver.Section];
-        [self.grade setText:aRiver.Grade];
-        [self.decription setText:aRiver.Description];
+        [self.River setText:aRiver.River];
+        [self.Section setText:aRiver.Section];
+        [self.Grade setText:aRiver.Grade];
+        [self.Description setText:aRiver.Description];
     }
 }
 

@@ -18,6 +18,7 @@
 @synthesize grade;
 @synthesize decription;
 @synthesize rivers;
+@synthesize ops;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -70,8 +71,20 @@
 	cell.textLabel.text = aRiver.River;
 	cell.detailTextLabel.text = aRiver.Section;
     return cell;
+    RiverList * riverListObj = [ops.getMyRivers objectAtIndex:indexPath.row];
+    cell.textLabel.text = riverListObj.River;
 }
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        ViewController *detailViewController = [segue destinationViewController];
+        
+        detailViewController.myRiverListDetail = [self.rivers objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+    }
+}
 
 
 

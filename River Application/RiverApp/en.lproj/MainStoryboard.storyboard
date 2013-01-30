@@ -33,6 +33,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="showDetail" customClass="TableViewControler.m" id="vx8-vD-9gl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -62,7 +65,7 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="River:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zI3-tQ-0hO">
@@ -144,10 +147,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="4AJ-zT-SyW"/>
                     <connections>
-                        <outlet property="decription" destination="Be9-gr-0cT" id="c9i-FK-evl"/>
-                        <outlet property="grade" destination="nuu-8q-Eqa" id="cWs-fI-BdY"/>
-                        <outlet property="riverName" destination="xhI-dM-sNV" id="hfm-UK-SU0"/>
-                        <outlet property="sectionName" destination="NaD-WV-kv6" id="PIC-BG-eqg"/>
+                        <outlet property="Description" destination="Be9-gr-0cT" id="Kk1-Dx-faO"/>
+                        <outlet property="Grade" destination="nuu-8q-Eqa" id="GdK-fd-gda"/>
+                        <outlet property="River" destination="xhI-dM-sNV" id="XVi-nO-Aiu"/>
+                        <outlet property="Section" destination="NaD-WV-kv6" id="a1Q-Vz-jlr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -173,10 +176,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="GetRiverListing:"/>
-                <relationship kind="outlet" name="decription" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="grade" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="riverName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="sectionName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Description" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Grade" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="River" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="Section" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

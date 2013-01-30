@@ -7,18 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RiverList.h"
 
-
+@class RiverList;
 @interface ViewController : UIViewController{
     NSMutableArray *rivers;
 }
 
-
+@property (nonatomic, strong) RiverList * myRiverListDetail;
 @property (nonatomic, retain) NSMutableArray *rivers;
-@property (weak, nonatomic) IBOutlet UILabel *riverName;
-@property (weak, nonatomic) IBOutlet UILabel *sectionName;
-@property (weak, nonatomic) IBOutlet UILabel *grade;
-@property (weak, nonatomic) IBOutlet UILabel *decription;
+@property (weak, nonatomic) IBOutlet UILabel *River;
+@property (weak, nonatomic) IBOutlet UILabel *Section;
+@property (weak, nonatomic) IBOutlet UILabel *Grade;
+@property (weak, nonatomic) IBOutlet UILabel *Description;
 
 -(IBAction)GetRiverListing:(id)sender;
 
