@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 #import "RiverList.h"
 
 @class RiverList;
-@interface ViewController : UIViewController{
+@interface ViewController : UIViewController <MKMapViewDelegate>{
+  //  BOOL _doneInitialZoom;
     NSMutableArray *rivers;
 }
 
@@ -20,7 +24,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *Section;
 @property (weak, nonatomic) IBOutlet UILabel *Grade;
 @property (weak, nonatomic) IBOutlet UILabel *Description;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) double GetOnLatitude;
+@property (nonatomic) double GetOnLongitude;
 
--(IBAction)GetRiverListing:(id)sender;
 
 @end

@@ -22,6 +22,8 @@
 		952F4540165024D9002F1310 /* RiverList.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F453F165024D9002F1310 /* RiverList.m */; };
 		952F454316502525002F1310 /* MyRiverList.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F454216502525002F1310 /* MyRiverList.m */; };
 		952F454716513BF1002F1310 /* dbRivers.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952F454616513BF1002F1310 /* dbRivers.sqlite */; };
+		9558AC5516BC023C00F9197A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558AC5416BC023C00F9197A /* CoreLocation.framework */; };
+		9565C7EF16B989750092EA44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9565C7EE16B989750092EA44 /* MapKit.framework */; };
 		958D9CBC1684AABE00616E8D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D9CBB1684AABE00616E8D /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		952F454116502525002F1310 /* MyRiverList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRiverList.h; sourceTree = "<group>"; };
 		952F454216502525002F1310 /* MyRiverList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRiverList.m; sourceTree = "<group>"; };
 		952F454616513BF1002F1310 /* dbRivers.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dbRivers.sqlite; sourceTree = "<group>"; };
+		9558AC5416BC023C00F9197A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9565C7EE16B989750092EA44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		958D9CBA1684AABE00616E8D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		958D9CBB1684AABE00616E8D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9558AC5516BC023C00F9197A /* CoreLocation.framework in Frameworks */,
+				9565C7EF16B989750092EA44 /* MapKit.framework in Frameworks */,
 				952F451516502329002F1310 /* UIKit.framework in Frameworks */,
 				952F451716502329002F1310 /* Foundation.framework in Frameworks */,
 				952F451916502329002F1310 /* CoreGraphics.framework in Frameworks */,
@@ -70,6 +76,8 @@
 		952F450516502328002F1310 = {
 			isa = PBXGroup;
 			children = (
+				9558AC5416BC023C00F9197A /* CoreLocation.framework */,
+				9565C7EE16B989750092EA44 /* MapKit.framework */,
 				952F451A16502329002F1310 /* RiverApp */,
 				952F451316502328002F1310 /* Frameworks */,
 				952F451116502328002F1310 /* Products */,

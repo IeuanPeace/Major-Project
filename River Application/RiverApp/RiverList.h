@@ -14,6 +14,10 @@
     NSString *Section;
     NSString *Grade;
     NSString *Description;
+    double GetOnLongitude;
+    double GetOnLatitude;
+    NSString *Test;
+
 }
 
 @property (nonatomic, retain) NSString *River;
@@ -21,5 +25,8 @@
 @property (nonatomic, retain) NSString *Section;
 @property (nonatomic, retain) NSString *Grade;
 @property (nonatomic, retain) NSString *Description;
+@property (nonatomic) double GetOnLongitude;
+@property (nonatomic) double GetOnLatitude;
+@property (nonatomic, retain) NSString *Test;
 
 @end

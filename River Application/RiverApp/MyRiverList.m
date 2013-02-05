@@ -8,6 +8,7 @@
 #import "MyRiverList.h"
 #import "RiverList.h"
 
+
 @implementation MyRiverList
 
 - (NSMutableArray *) getMyRivers{
@@ -25,7 +26,7 @@
         {
             NSLog(@"An error has occured.");
         }
-        const char *sql = "SELECT id, River, Section, Grade, Description FROM ListOfRivers";
+        const char *sql = "SELECT id, River, Section, Grade, Description, GetOnLatitude, GetOnLongitude, GetOfLatitude, GetOfLongitud FROM ListOfRivers";
         sqlite3_stmt *sqlStatement;
         if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK)
         {
@@ -37,9 +38,18 @@
             MyRiver.River = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
             MyRiver.Section = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 2)];
             MyRiver.Grade = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 3)];
-            MyRiver.Description = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 4)];
-            [riverArray addObject:MyRiver];
+            MyRiver.Description =       [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 4)];
+            NSString *lat = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 5)];
+            NSString *lon = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 6)];
+     //       MyRiver.GetOnLatitude =  [NSNumber numberWithFloat:(float) sqlite3_column_double(sqlStatement, 9)];
             
+            MyRiver.GetOnLatitude = [lat doubleValue];
+            MyRiver.GetOnLongitude = [lon doubleValue];
+
+            [riverArray addObject:MyRiver];
+    //        NSLog(@"ID: %i", MyRiver.idriver);
+            NSLog(@"lat: %f", MyRiver.GetOnLatitude);
+
         }
     }
     @catch (NSException *exception) {

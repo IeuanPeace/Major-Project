@@ -15,5 +15,8 @@
 @synthesize Section;
 @synthesize Grade;
 @synthesize Description;
+@synthesize GetOnLatitude;
+@synthesize GetOnLongitude;
+@synthesize Test;
 
 @end

@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sectionName;
 @property (weak, nonatomic) IBOutlet UILabel *grade;
 @property (weak, nonatomic) IBOutlet UILabel *decription;
--(IBAction)GetRiverListing:(id)sender;
+
+//-(IBAction)GetRiverListing:(id)sender;
 
 @end

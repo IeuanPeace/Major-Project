@@ -17,7 +17,9 @@
 @synthesize sectionName;
 @synthesize grade;
 @synthesize decription;
+
 @synthesize rivers;
+
 @synthesize ops;
 
 
@@ -38,6 +40,8 @@
     [self.sectionName setText:((RiverList *) [self.rivers objectAtIndex:0]).Section];
     [self.grade setText:((RiverList *) [self.rivers objectAtIndex:0]).Grade];
     [self.decription setText:((RiverList *) [self.rivers objectAtIndex:0]).Description];
+
+    
     [super viewDidLoad];
 }
 
