@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) double GetOnLatitude;
 @property (nonatomic) double GetOnLongitude;
+@property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 
 
 @end
