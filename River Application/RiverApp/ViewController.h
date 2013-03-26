@@ -27,7 +27,10 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) double GetOnLatitude;
 @property (nonatomic) double GetOnLongitude;
-@property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
+@property CLLocationCoordinate2D coords;
+
+- (IBAction)getDirections:(id)sender;
 
 @end

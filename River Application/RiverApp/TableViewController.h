@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "RiverList.h"
 #import "MyRiverList.h"
+#import <Parse/Parse.h>
 
 @interface TableViewController : UITableViewController{
     

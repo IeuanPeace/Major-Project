@@ -30,6 +30,9 @@
 @synthesize levelsLabel;
 
 
+
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,10 +44,12 @@
 
 - (void)viewDidLoad
 {
+
+    
     [super viewDidLoad];
     self.mapView.delegate = self;
     
-    
+    //This code came from http://www.touch-code-magazine.com/tutorial-fetch-and-parse-json-in-ios6/
     //1
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //code executed in the background
@@ -100,29 +105,32 @@
     point.title = myRiverListDetail.River;
     point.subtitle = myRiverListDetail.Description;
     
+    
     [self.mapView addAnnotation:point];
+    
+
 }
 
 
 -(void)updateUIWithDictionary:(NSDictionary*)json {
     myRiverListDetail = (RiverList *)[self myRiverListDetail];
     if ([myRiverListDetail.River isEqualToString:(@"Dwyfor")]) {
-    
-    @try{
-        levelsLabel.text = [NSString stringWithFormat:
-                      @"%@ \n",
-                    //  json[@"id"],
-                      json[@"riverlevels"][0][@"river level"],
-                      nil];
-    }
-    @catch (NSException *exception) {
-        [[[UIAlertView alloc] initWithTitle:@"Error"
-                                    message:@"Could not parse the JSON feed."
-                                   delegate:nil
-                          cancelButtonTitle:@"Close"
-                          otherButtonTitles: nil] show];
-        NSLog(@"Exception: %@", exception);
-    }
+        
+        @try{
+            levelsLabel.text = [NSString stringWithFormat:
+                                @"%@ \n",
+                                //  json[@"id"],
+                                json[@"riverlevels"][0][@"river level"],
+                                nil];
+        }
+        @catch (NSException *exception) {
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:@"Could not parse the JSON feed."
+                                       delegate:nil
+                              cancelButtonTitle:@"Close"
+                              otherButtonTitles: nil] show];
+            NSLog(@"Exception: %@", exception);
+        }
     }
 }
 
@@ -137,6 +145,62 @@
 }
 
 
+/**
+ ***http://www.techotopia.com/index.php/An_Example_iOS_6_iPhone_MKMapItem_Application
+ */
 
+
+- (IBAction)getDirections:(id)sender {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
+    
+    
+    
+
+    
+    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:myRiverListDetail.GetOnLatitude
+                                                        longitude:myRiverListDetail.GetOnLongitude];
+    
+    [geocoder  reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+
+    
+        
+        if (error) {
+            NSLog(@"Geocode failed with error: %@", error);
+            return;
+        }
+        
+        if (placemarks && placemarks.count > 0)
+        {
+            CLPlacemark *placemark = placemarks[0];
+            
+            CLLocation *location = placemark.location;
+            _coords = location.coordinate;
+            _coords = location.coordinate;
+            
+            [self showMap];
+        }
+    }];
+}
+
+
+
+-(void)showMap
+{
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
+
+    
+    
+    MKPlacemark *place = [[MKPlacemark alloc]initWithCoordinate:coords addressDictionary:nil];
+    
+    MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:place];
+    
+    NSDictionary *options = @{
+        MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving
+    };
+    
+    [mapItem openInMapsWithLaunchOptions:options];
+}
 
 @end
