@@ -14,8 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    PFQueryTableViewController *controller =[[PFQueryTableViewController alloc]
-                                             initWithClassName:@"Comments"];
+   // PFQueryTableViewController *controller =[[PFQueryTableViewController alloc]
+    //                                          initWithClassName:@"Comments"];
     
     [Parse setApplicationId:@"9oNi6mULif1ykMtt41sAsYDDd8dlxmRrpoj0r2o5" clientKey:@"0Xf5TCv60UfoPmmyd6ZX1Hny3RmjDALErZMksNxp"];
     return YES;

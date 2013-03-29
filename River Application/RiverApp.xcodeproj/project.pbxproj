@@ -35,10 +35,11 @@
 		952F454316502525002F1310 /* MyRiverList.m in Sources */ = {isa = PBXBuildFile; fileRef = 952F454216502525002F1310 /* MyRiverList.m */; };
 		952F454716513BF1002F1310 /* dbRivers.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952F454616513BF1002F1310 /* dbRivers.sqlite */; };
 		953E1B1216DB959A007FD8F5 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E1B1116DB959A007FD8F5 /* CommentsViewController.m */; };
+		954F7562170465F3007E7727 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F7561170465F3007E7727 /* MapViewController.m */; };
+		954F75661704A447007E7727 /* RiverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F75651704A447007E7727 /* RiverLocation.m */; };
 		9558AC5516BC023C00F9197A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558AC5416BC023C00F9197A /* CoreLocation.framework */; };
 		9565C7EF16B989750092EA44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9565C7EE16B989750092EA44 /* MapKit.framework */; };
 		958D9CBC1684AABE00616E8D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D9CBB1684AABE00616E8D /* TableViewController.m */; };
-		95FE40361701F795007631F6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FE40351701F795007631F6 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,12 +79,14 @@
 		952F454616513BF1002F1310 /* dbRivers.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dbRivers.sqlite; sourceTree = "<group>"; };
 		953E1B1016DB959A007FD8F5 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		953E1B1116DB959A007FD8F5 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		954F7560170465F3007E7727 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		954F7561170465F3007E7727 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		954F75641704A447007E7727 /* RiverLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RiverLocation.h; sourceTree = "<group>"; };
+		954F75651704A447007E7727 /* RiverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverLocation.m; sourceTree = "<group>"; };
 		9558AC5416BC023C00F9197A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9565C7EE16B989750092EA44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		958D9CBA1684AABE00616E8D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		958D9CBB1684AABE00616E8D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		95FE40341701F795007631F6 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		95FE40351701F795007631F6 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,8 +174,9 @@
 				952F453016502329002F1310 /* ViewController.m */,
 				953E1B1016DB959A007FD8F5 /* CommentsViewController.h */,
 				953E1B1116DB959A007FD8F5 /* CommentsViewController.m */,
-				95FE40341701F795007631F6 /* MapViewController.h */,
-				95FE40351701F795007631F6 /* MapViewController.m */,
+				954F7560170465F3007E7727 /* MapViewController.h */,
+				954F7561170465F3007E7727 /* MapViewController.m */,
+				954F75631704A33B007E7727 /* Map */,
 				952F451B16502329002F1310 /* Supporting Files */,
 			);
 			path = RiverApp;
@@ -201,6 +205,15 @@
 				952F454216502525002F1310 /* MyRiverList.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		954F75631704A33B007E7727 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				954F75641704A447007E7727 /* RiverLocation.h */,
+				954F75651704A447007E7727 /* RiverLocation.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +290,8 @@
 				952F454316502525002F1310 /* MyRiverList.m in Sources */,
 				958D9CBC1684AABE00616E8D /* TableViewController.m in Sources */,
 				953E1B1216DB959A007FD8F5 /* CommentsViewController.m in Sources */,
-				95FE40361701F795007631F6 /* MapViewController.m in Sources */,
+				954F7562170465F3007E7727 /* MapViewController.m in Sources */,
+				954F75661704A447007E7727 /* RiverLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

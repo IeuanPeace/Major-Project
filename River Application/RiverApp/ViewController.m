@@ -17,20 +17,16 @@
 
 @implementation ViewController
 
-
 @synthesize River;
 @synthesize Section;
 @synthesize Grade;
 @synthesize Description;
 @synthesize rivers;
 @synthesize myRiverListDetail;
-@synthesize mapView;
+//@synthesize mapView;
 @synthesize GetOnLatitude;
 @synthesize GetOnLongitude;
 @synthesize levelsLabel;
-
-
-
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -86,14 +82,13 @@
     self.Description.text = myRiverListDetail.Description;
     self.GetOnLatitude = myRiverListDetail.GetOnLatitude;
     self.GetOnLongitude = myRiverListDetail.GetOnLongitude;
-    self.mapView.delegate = self;
-    
+    [self mapView];
+        
 }
 
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    // Add an annotation
     
     CLLocationCoordinate2D myPlaceCoord ={.latitude = myRiverListDetail.GetOnLatitude, .longitude = myRiverListDetail.GetOnLongitude};
     
@@ -105,10 +100,10 @@
     point.title = myRiverListDetail.River;
     point.subtitle = myRiverListDetail.Description;
     
-    
     [self.mapView addAnnotation:point];
     
-
+    
+    
 }
 
 
@@ -153,11 +148,7 @@
 - (IBAction)getDirections:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
-    
-    
-    
-
+  //  CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
     
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:myRiverListDetail.GetOnLatitude
                                                         longitude:myRiverListDetail.GetOnLongitude];
