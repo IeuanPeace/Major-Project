@@ -207,11 +207,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-ti-ZMr">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="218" id="aqn-aN-tLh"/>
-                                </constraints>
-                            </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="River Level:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRr-E8-3X5">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -241,11 +236,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dc0-eq-hHh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="dXX-EQ-aLm"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zem-34-RGp" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="2mu-Q9-pKu"/>
+                            <constraint firstItem="dc0-eq-hHh" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="2qL-ls-pjg"/>
                             <constraint firstItem="wuC-YG-Wu0" firstAttribute="centerY" secondItem="xhI-dM-sNV" secondAttribute="centerY" type="default" id="5mg-0a-vej"/>
+                            <constraint firstItem="zem-34-RGp" firstAttribute="top" secondItem="dc0-eq-hHh" secondAttribute="bottom" type="default" id="6Vj-wz-Fop"/>
                             <constraint firstItem="zm7-wk-TZ9" firstAttribute="bottom" secondItem="Be9-gr-0cT" secondAttribute="bottom" type="default" id="6h9-z9-4ZW"/>
                             <constraint firstItem="aC9-eh-W5S" firstAttribute="baseline" secondItem="iRr-E8-3X5" secondAttribute="baseline" type="default" id="7da-Y1-go5"/>
                             <constraint firstItem="nuu-8q-Eqa" firstAttribute="leading" secondItem="NaD-WV-kv6" secondAttribute="leading" type="default" id="8mc-Nn-VHl"/>
@@ -254,23 +256,21 @@
                             <constraint firstItem="xhI-dM-sNV" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="CL7-ND-pwu"/>
                             <constraint firstItem="zm7-wk-TZ9" firstAttribute="top" secondItem="iRr-E8-3X5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D8E-K4-LjY"/>
                             <constraint firstItem="wuC-YG-Wu0" firstAttribute="trailing" secondItem="JjE-Ku-HsM" secondAttribute="trailing" type="default" id="FQa-KC-mZk"/>
+                            <constraint firstItem="dc0-eq-hHh" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="LPW-5s-jXp"/>
                             <constraint firstItem="iRr-E8-3X5" firstAttribute="top" secondItem="cf9-hC-53u" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Lat-Nh-7CJ"/>
                             <constraint firstItem="NaD-WV-kv6" firstAttribute="baseline" secondItem="JjE-Ku-HsM" secondAttribute="baseline" type="default" id="Ljs-IF-UAL"/>
                             <constraint firstItem="zem-34-RGp" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="N0A-eY-TYS"/>
-                            <constraint firstItem="YaG-ti-ZMr" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="O4G-v2-gxq"/>
                             <constraint firstItem="Be9-gr-0cT" firstAttribute="top" secondItem="aC9-eh-W5S" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="P84-S8-Lv9"/>
                             <constraint firstItem="cf9-hC-53u" firstAttribute="trailing" secondItem="iRr-E8-3X5" secondAttribute="trailing" type="default" id="V55-td-ZLj"/>
                             <constraint firstItem="iRr-E8-3X5" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="41" id="X4S-Ch-Uyv"/>
                             <constraint firstItem="zem-34-RGp" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="aNo-pC-gtb"/>
                             <constraint firstItem="cf9-hC-53u" firstAttribute="top" secondItem="JjE-Ku-HsM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ccl-xW-7Me"/>
                             <constraint firstItem="xhI-dM-sNV" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="159" id="cvM-2A-SOe"/>
-                            <constraint firstItem="YaG-ti-ZMr" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="dPv-Y4-GHH"/>
                             <constraint firstItem="iRr-E8-3X5" firstAttribute="leading" secondItem="zm7-wk-TZ9" secondAttribute="leading" type="default" id="dtx-6f-mg3"/>
                             <constraint firstItem="cf9-hC-53u" firstAttribute="trailing" secondItem="JjE-Ku-HsM" secondAttribute="trailing" type="default" id="fyv-Pe-YsW"/>
                             <constraint firstItem="aC9-eh-W5S" firstAttribute="leading" secondItem="nuu-8q-Eqa" secondAttribute="leading" type="default" id="jW3-S2-SEz"/>
                             <constraint firstItem="nuu-8q-Eqa" firstAttribute="baseline" secondItem="cf9-hC-53u" secondAttribute="baseline" type="default" id="o65-3f-L2m"/>
                             <constraint firstItem="xhI-dM-sNV" firstAttribute="leading" secondItem="NaD-WV-kv6" secondAttribute="leading" type="default" id="yl9-5e-NhK"/>
-                            <constraint firstItem="YaG-ti-ZMr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="166" id="yqg-I0-pwn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Information" id="Ipy-8I-jMU"/>
@@ -281,7 +281,7 @@
                         <outlet property="River" destination="xhI-dM-sNV" id="XVi-nO-Aiu"/>
                         <outlet property="Section" destination="NaD-WV-kv6" id="a1Q-Vz-jlr"/>
                         <outlet property="levelsLabel" destination="aC9-eh-W5S" id="CPW-Bu-VZP"/>
-                        <outlet property="mapView" destination="YaG-ti-ZMr" id="ShN-7i-x9H"/>
+                        <outlet property="mapView" destination="dc0-eq-hHh" id="7k9-Qp-tHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>

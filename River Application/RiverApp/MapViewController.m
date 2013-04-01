@@ -35,6 +35,20 @@
     return self;
 }
 
+- (IBAction)refreshTapped:(id)sender {
+  
+    MKCoordinateRegion mapRegion = [_mapView region];
+    CLLocationCoordinate2D centerLocation = mapRegion.center;
+    
+    MyRiverList * myrivers =[[MyRiverList alloc] init];
+    self.rivers = [myrivers getMyRivers];
+    self.riverName = ((RiverList *) [self.rivers objectAtIndex:0]).River;
+    self.grade = ((RiverList *) [self.rivers objectAtIndex:0]).Grade;
+    self.getOnLatitude = ((RiverList *) [self.rivers objectAtIndex:0]).GetOnLatitude;
+    self.getOnLongitude = ((RiverList *) [self.rivers objectAtIndex:0]).GetOnLongitude;
+    
+   }
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -82,7 +96,6 @@
             annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.image = [UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
         } else {
             annotationView.annotation = annotation;
         }
@@ -94,28 +107,31 @@
 }
 
 
-- (void)plotRivers:(NSMutableArray *)responseData riverAtIndex:(NSIndexPath *)indexPath {
+- (void)plotRivers:(NSMutableArray *)responseData riverAtIndex:(NSIndexPath *)indexPath
+{
+    for (id<MKAnnotation> annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
     
-    NSMutableArray *array = rivers;
-    // NSArray *data = [array objectForKey:@"data"];
-    
-    RiverList *aRiver = [array objectAtIndex:indexPath.row];
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = aRiver.GetOnLatitude;
-    coordinate.longitude = aRiver.GetOnLongitude;
-    RiverLocation *annotation = [[RiverLocation alloc] initWithName:aRiver.River grade:aRiver.Grade coordinate:coordinate];
-    RiverList * riverListObj = [ops.getMyRivers objectAtIndex:indexPath.row];
-    [_mapView addAnnotation:annotation];
-    
-    ////look at table view for what to do next!!!!!!
- /*   for (NSMutableArray *row in array) {
+    NSMutableArray * locations = [[NSMutableArray alloc] init];
+    NSInteger i = 0;
+    RiverList *aRiver = [self.rivers objectAtIndex:0];
+   
+    for (aRiver in self.rivers) {
+
+        CLLocationCoordinate2D location;
+        RiverList *aRiver = [self.rivers objectAtIndex:i];
+
+        location.latitude =  aRiver.GetOnLatitude;
+        location.longitude = aRiver.GetOnLongitude;
+        RiverLocation *annotation = [[RiverLocation alloc] initWithName:aRiver.River grade:aRiver.Grade coordinate:location];
+        [locations addObject:annotation];
+
+        i=i+1;
+
         
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = self.getOnLatitude;
-        coordinate.longitude = self.getOnLongitude;
-        RiverLocation *annotation = [[RiverLocation alloc] initWithName:riverName grade:grade coordinate:coordinate] ;
-        [_mapView addAnnotation:annotation];
-	} */
+    }
+        [_mapView addAnnotations:locations];
     
     
 }

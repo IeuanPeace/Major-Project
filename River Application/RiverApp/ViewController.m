@@ -17,16 +17,20 @@
 
 @implementation ViewController
 
+
 @synthesize River;
 @synthesize Section;
 @synthesize Grade;
 @synthesize Description;
 @synthesize rivers;
 @synthesize myRiverListDetail;
-//@synthesize mapView;
+@synthesize mapView;
 @synthesize GetOnLatitude;
 @synthesize GetOnLongitude;
 @synthesize levelsLabel;
+
+
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,10 +44,8 @@
 
 - (void)viewDidLoad
 {
-
-    
     [super viewDidLoad];
-    self.mapView.delegate = self;
+    mapView.showsUserLocation = YES;
     
     //This code came from http://www.touch-code-magazine.com/tutorial-fetch-and-parse-json-in-ios6/
     //1
@@ -82,13 +84,14 @@
     self.Description.text = myRiverListDetail.Description;
     self.GetOnLatitude = myRiverListDetail.GetOnLatitude;
     self.GetOnLongitude = myRiverListDetail.GetOnLongitude;
-    [self mapView];
-        
+    self.mapView.delegate = self;
+    
 }
 
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    // Add an annotation
     
     CLLocationCoordinate2D myPlaceCoord ={.latitude = myRiverListDetail.GetOnLatitude, .longitude = myRiverListDetail.GetOnLongitude};
     
@@ -100,8 +103,8 @@
     point.title = myRiverListDetail.River;
     point.subtitle = myRiverListDetail.Description;
     
-    [self.mapView addAnnotation:point];
     
+    [self.mapView addAnnotation:point];
     
     
 }
@@ -148,14 +151,18 @@
 - (IBAction)getDirections:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-  //  CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
+    
+    
+    
+    
     
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:myRiverListDetail.GetOnLatitude
                                                         longitude:myRiverListDetail.GetOnLongitude];
     
     [geocoder  reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-
-    
+        
+        
         
         if (error) {
             NSLog(@"Geocode failed with error: %@", error);
@@ -180,7 +187,7 @@
 -(void)showMap
 {
     CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
-
+    
     
     
     MKPlacemark *place = [[MKPlacemark alloc]initWithCoordinate:coords addressDictionary:nil];
@@ -188,7 +195,7 @@
     MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:place];
     
     NSDictionary *options = @{
-        MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving
+MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving
     };
     
     [mapItem openInMapsWithLaunchOptions:options];

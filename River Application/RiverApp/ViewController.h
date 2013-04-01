@@ -14,8 +14,9 @@
 
 @class RiverList;
 @interface ViewController : UIViewController <MKMapViewDelegate>{
-  //  BOOL _doneInitialZoom;
+    //  BOOL _doneInitialZoom;
     NSMutableArray *rivers;
+    MKMapView *mapView;
 }
 
 @property (nonatomic, strong) RiverList * myRiverListDetail;
@@ -24,7 +25,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *Section;
 @property (weak, nonatomic) IBOutlet UILabel *Grade;
 @property (weak, nonatomic) IBOutlet UILabel *Description;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) IBOutlet MKMapView *mapView;
+
 @property (nonatomic) double GetOnLatitude;
 @property (nonatomic) double GetOnLongitude;
 
