@@ -37,8 +37,8 @@
 
 - (IBAction)refreshTapped:(id)sender {
   
-    MKCoordinateRegion mapRegion = [_mapView region];
-    CLLocationCoordinate2D centerLocation = mapRegion.center;
+ //   MKCoordinateRegion mapRegion = [_mapView region];
+
     
     MyRiverList * myrivers =[[MyRiverList alloc] init];
     self.rivers = [myrivers getMyRivers];

@@ -18,6 +18,7 @@
     //                                          initWithClassName:@"Comments"];
     
     [Parse setApplicationId:@"9oNi6mULif1ykMtt41sAsYDDd8dlxmRrpoj0r2o5" clientKey:@"0Xf5TCv60UfoPmmyd6ZX1Hny3RmjDALErZMksNxp"];
+ //   [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							

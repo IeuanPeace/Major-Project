@@ -39,6 +39,7 @@
 		954F75661704A447007E7727 /* RiverLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F75651704A447007E7727 /* RiverLocation.m */; };
 		9558AC5516BC023C00F9197A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9558AC5416BC023C00F9197A /* CoreLocation.framework */; };
 		9565C7EF16B989750092EA44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9565C7EE16B989750092EA44 /* MapKit.framework */; };
+		958ADA60170B1D5C00B9FEB4 /* NewCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958ADA5F170B1D5C00B9FEB4 /* NewCommentViewController.m */; };
 		958D9CBC1684AABE00616E8D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958D9CBB1684AABE00616E8D /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,8 @@
 		954F75651704A447007E7727 /* RiverLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RiverLocation.m; sourceTree = "<group>"; };
 		9558AC5416BC023C00F9197A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9565C7EE16B989750092EA44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		958ADA5E170B1D5C00B9FEB4 /* NewCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCommentViewController.h; sourceTree = "<group>"; };
+		958ADA5F170B1D5C00B9FEB4 /* NewCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCommentViewController.m; sourceTree = "<group>"; };
 		958D9CBA1684AABE00616E8D /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		958D9CBB1684AABE00616E8D /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,16 +169,9 @@
 				952F453D1650243F002F1310 /* Model */,
 				952F452316502329002F1310 /* AppDelegate.h */,
 				952F452416502329002F1310 /* AppDelegate.m */,
-				958D9CBA1684AABE00616E8D /* TableViewController.h */,
-				958D9CBB1684AABE00616E8D /* TableViewController.m */,
 				952F452C16502329002F1310 /* MainStoryboard.storyboard */,
 				952F454616513BF1002F1310 /* dbRivers.sqlite */,
-				952F452F16502329002F1310 /* ViewController.h */,
-				952F453016502329002F1310 /* ViewController.m */,
-				953E1B1016DB959A007FD8F5 /* CommentsViewController.h */,
-				953E1B1116DB959A007FD8F5 /* CommentsViewController.m */,
-				954F7560170465F3007E7727 /* MapViewController.h */,
-				954F7561170465F3007E7727 /* MapViewController.m */,
+				958ADA5C170B147300B9FEB4 /* ViewControllers */,
 				954F75631704A33B007E7727 /* Map */,
 				952F451B16502329002F1310 /* Supporting Files */,
 			);
@@ -214,6 +210,23 @@
 				954F75651704A447007E7727 /* RiverLocation.m */,
 			);
 			name = Map;
+			sourceTree = "<group>";
+		};
+		958ADA5C170B147300B9FEB4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				952F452F16502329002F1310 /* ViewController.h */,
+				952F453016502329002F1310 /* ViewController.m */,
+				958D9CBA1684AABE00616E8D /* TableViewController.h */,
+				958D9CBB1684AABE00616E8D /* TableViewController.m */,
+				954F7560170465F3007E7727 /* MapViewController.h */,
+				954F7561170465F3007E7727 /* MapViewController.m */,
+				953E1B1016DB959A007FD8F5 /* CommentsViewController.h */,
+				953E1B1116DB959A007FD8F5 /* CommentsViewController.m */,
+				958ADA5E170B1D5C00B9FEB4 /* NewCommentViewController.h */,
+				958ADA5F170B1D5C00B9FEB4 /* NewCommentViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +305,7 @@
 				953E1B1216DB959A007FD8F5 /* CommentsViewController.m in Sources */,
 				954F7562170465F3007E7727 /* MapViewController.m in Sources */,
 				954F75661704A447007E7727 /* RiverLocation.m in Sources */,
+				958ADA60170B1D5C00B9FEB4 /* NewCommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

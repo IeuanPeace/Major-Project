@@ -151,7 +151,7 @@
 - (IBAction)getDirections:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(myRiverListDetail.GetOnLatitude, myRiverListDetail.GetOnLongitude);
+
     
     
     

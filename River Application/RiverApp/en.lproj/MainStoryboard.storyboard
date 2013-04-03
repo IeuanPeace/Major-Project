@@ -221,7 +221,7 @@
                                 <items>
                                     <barButtonItem title="Comments" width="146" id="gKS-cn-S5A">
                                         <connections>
-                                            <segue destination="G0e-2A-2Cz" kind="push" id="JUT-2d-1uV"/>
+                                            <segue destination="cFS-vb-9g8" kind="push" id="wus-6N-AAu"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Directions" width="150" id="j7j-t4-IWR">
@@ -288,76 +288,63 @@
             </objects>
             <point key="canvasLocation" x="-47" y="288"/>
         </scene>
-        <!--Table View Controller - Comments-->
-        <scene sceneID="b0d-ix-25P">
+        <!--New Comment View Controller - New comment-->
+        <scene sceneID="ZOG-jf-zyi">
             <objects>
-                <tableViewController id="G0e-2A-2Cz" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9sN-yo-yvA">
+                <viewController id="cFS-vb-9g8" customClass="NewCommentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F6b-Kq-bEW">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="This is shitsadf" textLabel="nN2-Wh-KIY" rowHeight="44" style="IBUITableViewCellStyleDefault" id="79L-QC-RhF">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="300" id="nN2-Wh-KIY">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <string key="text">Title is a bunch of willy nilly fools trying there best to make some shit work and i have no idear what to do with my life but i like to eat pies and more pies stake pie, chicken and mushrooms pie, shepereds pie, apple pie and rubab pie with lots of custard. Tom is a tart!</string>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="This is shit" textLabel="ca3-Vu-fNa" rowHeight="44" style="IBUITableViewCellStyleDefault" id="aq0-mi-yZ2">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="300" id="ca3-Vu-fNa">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <string key="text">Title is a bunch of willy nilly fools trying there best to make some shit work and i have no idear what to do with my life but i like to eat pies and more pies stake pie, chicken and mushrooms pie, shepereds pie, apple pie and rubab pie with lots of custard. Tom is a tart!</string>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="G0e-2A-2Cz" id="Bbx-sK-urF"/>
-                            <outlet property="delegate" destination="G0e-2A-2Cz" id="Vau-HH-lAa"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Comments" id="x1L-Ks-HnM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F5E-7j-DBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QY-va-W9W">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="164" id="TcP-OL-onq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.75789803832116787" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3QY-va-W9W" firstAttribute="top" secondItem="F6b-Kq-bEW" secondAttribute="top" constant="15" id="gFY-mM-DxL"/>
+                            <constraint firstItem="3QY-va-W9W" firstAttribute="leading" secondItem="F6b-Kq-bEW" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lVq-ca-LlB"/>
+                            <constraint firstAttribute="trailing" secondItem="3QY-va-W9W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qG9-Lx-anz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New comment" id="N6q-c5-PQo">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="CGG-PS-Rv1">
+                            <connections>
+                                <action selector="saveComment:" destination="cFS-vb-9g8" id="bx2-Fv-InE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentText" destination="3QY-va-W9W" id="XXt-t4-Vct"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kmm-D0-zR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="281"/>
+            <point key="canvasLocation" x="402" y="288"/>
         </scene>
     </scenes>
     <classes>
         <class className="MapViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
             <relationships>
+                <relationship kind="action" name="refreshTapped:"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="NewCommentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewCommentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveComment:"/>
+                <relationship kind="outlet" name="commentText" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="TableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
