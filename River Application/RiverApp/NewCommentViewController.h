@@ -12,6 +12,7 @@
 
 @interface NewCommentViewController : UIViewController <UITextViewDelegate>
 
+- (IBAction)submitButton:(id)sender;
 @property (nonatomic, strong) RiverList * myRiverListDetail;
 @property (strong, nonatomic) IBOutlet UITextView *commentText;
 @property (nonatomic) int theRiverID;

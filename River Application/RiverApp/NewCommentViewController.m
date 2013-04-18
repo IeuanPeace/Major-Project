@@ -43,14 +43,14 @@
     return YES;
 }
 
-- (IBAction)saveComment:(id)sender {
 
+- (IBAction)submitButton:(id)sender {
     NSString *commentString = self.commentText.text;
     PFObject *comment = [PFObject objectWithClassName:@"Comment"];
     [comment setObject:commentString forKey:@"commentText"];
     [comment setObject:[NSNumber numberWithInt:self.theRiverID] forKey:@"riverID"];
-    [comment save];
-    
+    [comment saveInBackground];
+    [self disablesAutomaticKeyboardDismissal];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 @end
