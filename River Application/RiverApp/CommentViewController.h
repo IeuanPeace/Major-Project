@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface CommentViewController : ViewController
+@interface CommentViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 

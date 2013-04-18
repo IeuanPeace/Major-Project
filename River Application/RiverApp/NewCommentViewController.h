@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "RiverList.h"
 
 @interface NewCommentViewController : UIViewController <UITextViewDelegate>
 
-
+@property (nonatomic, strong) RiverList * myRiverListDetail;
 @property (strong, nonatomic) IBOutlet UITextView *commentText;
+@property (nonatomic) int theRiverID;
 
 @end

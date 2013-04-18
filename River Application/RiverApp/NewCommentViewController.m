@@ -7,7 +7,7 @@
 //
 
 #import "NewCommentViewController.h"
-
+#import "ViewController.h"
 
 @implementation NewCommentViewController
 
@@ -40,16 +40,15 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    
     return YES;
 }
 
 - (IBAction)saveComment:(id)sender {
 
     NSString *commentString = self.commentText.text;
-    
     PFObject *comment = [PFObject objectWithClassName:@"Comment"];
     [comment setObject:commentString forKey:@"commentText"];
+    [comment setObject:[NSNumber numberWithInt:self.theRiverID] forKey:@"riverID"];
     [comment save];
     
 }

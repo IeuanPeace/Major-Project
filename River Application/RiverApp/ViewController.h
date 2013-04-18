@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "CommentTableViewController.h"
 #import "RiverList.h"
 
 @class RiverList;
@@ -29,6 +29,8 @@
 
 @property (nonatomic) double GetOnLatitude;
 @property (nonatomic) double GetOnLongitude;
+
+@property (nonatomic) NSInteger riverID;
 
 @property (weak, nonatomic) IBOutlet UILabel *levelsLabel;
 @property CLLocationCoordinate2D coords;

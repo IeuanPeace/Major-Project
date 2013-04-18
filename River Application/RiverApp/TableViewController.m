@@ -41,7 +41,6 @@
     [self.grade setText:((RiverList *) [self.rivers objectAtIndex:0]).Grade];
     [self.decription setText:((RiverList *) [self.rivers objectAtIndex:0]).Description];
     
-    
     [super viewDidLoad];
 }
 
@@ -55,7 +54,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     // Return the number of sections.
     return 1;
 }
@@ -128,9 +126,5 @@
  return YES;
  }
  */
-
-
-
-
 
 @end

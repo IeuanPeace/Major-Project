@@ -28,7 +28,7 @@
 @synthesize GetOnLatitude;
 @synthesize GetOnLongitude;
 @synthesize levelsLabel;
-
+@synthesize riverID;
 
 
 
@@ -74,7 +74,7 @@
     });
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated 
 {
     [super viewWillAppear:animated];
     myRiverListDetail = (RiverList *)[self myRiverListDetail];
@@ -84,6 +84,7 @@
     self.Description.text = myRiverListDetail.Description;
     self.GetOnLatitude = myRiverListDetail.GetOnLatitude;
     self.GetOnLongitude = myRiverListDetail.GetOnLongitude;
+    self.riverID = myRiverListDetail.idriver;
     self.mapView.delegate = self;
     
 }
@@ -151,18 +152,8 @@
 - (IBAction)getDirections:(id)sender {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
-
-    
-    
-    
-    
-    
-    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:myRiverListDetail.GetOnLatitude
-                                                        longitude:myRiverListDetail.GetOnLongitude];
-    
+    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:myRiverListDetail.GetOnLatitude longitude:myRiverListDetail.GetOnLongitude];
     [geocoder  reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        
-        
         
         if (error) {
             NSLog(@"Geocode failed with error: %@", error);
@@ -195,10 +186,20 @@
     MKMapItem *mapItem = [[MKMapItem alloc]initWithPlacemark:place];
     
     NSDictionary *options = @{
-MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving
+                              MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving
     };
     
     [mapItem openInMapsWithLaunchOptions:options];
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showComment"]) {
+        CommentTableViewController *detailViewController = [segue destinationViewController];
+        detailViewController.theRiverID = self.riverID;
+        
+    }
 }
 
 @end

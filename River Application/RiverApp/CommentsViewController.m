@@ -7,10 +7,8 @@
 //
 
 #import "CommentsViewController.h"
+#import "ViewController.h"
 
-@interface CommentsViewController ()
-
-@end
 
 @implementation CommentsViewController
 
@@ -27,11 +25,7 @@
 {
     [super viewDidLoad];
     
-  //  PFQuery *query = [PFQuery queryWithClassName:@"Comments"];
-    
-    for(int i=1; i<11; i++){
-        
-    }
+
     
 }
 
@@ -39,6 +33,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
+    [query whereKey:@"riverID" equalTo:[NSNumber numberWithInt:self.theRiverID]];
+
+    // Set up the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell"];
+//	cell.textLabel.text = ;
+    return cell;
+
 }
 
 #pragma mark - Table view data source
