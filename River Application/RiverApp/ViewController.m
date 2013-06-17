@@ -130,6 +130,10 @@
                               otherButtonTitles: nil] show];
             NSLog(@"Exception: %@", exception);
         }
+        
+    }
+    else{
+        levelsLabel.text = @"No data";
     }
 }
 
@@ -144,7 +148,7 @@
 }
 
 
-/**
+/**This code was built using the tutorial:
  ***http://www.techotopia.com/index.php/An_Example_iOS_6_iPhone_MKMapItem_Application
  */
 

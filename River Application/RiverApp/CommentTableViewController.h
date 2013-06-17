@@ -10,10 +10,13 @@
 #import <UIKit/UIKit.h>
 #import "RiverList.h"
 #import "NewCommentViewController.h"
+#import "DetailedCommentViewController.h"
+
 @interface CommentTableViewController : PFQueryTableViewController
 
 @property (nonatomic, strong) RiverList * myRiverListDetail;
 @property (nonatomic) int theRiverID;
+@property (nonatomic, strong) NSString * ID;
 @property (nonatomic, weak) NSArray *comment;
 
 

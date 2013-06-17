@@ -11,6 +11,7 @@
 
 @implementation CommentTableViewController
 @synthesize comment;
+@synthesize ID;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -78,6 +79,7 @@
     
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = [object objectForKey:@"commentText"];
+    self.ID = [object objectForKey:@"commentText"];
     
     return cell;
 }
@@ -89,6 +91,13 @@
       //  NSNumber *riverID = [NSNumber numberWithInteger:self.theRiverID];
         detailViewController.theRiverID = self.theRiverID;
         
+    }
+    if ([[segue identifier] isEqualToString:@"showTheCommentID"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        DetailedCommentViewController *detailViewController = [segue destinationViewController];
+        detailViewController.object = object;
+
     }
 }
 
